@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'apka';
+  public title = 'apka';
+
+  constructor() {
+  }
+
+  private todayDate() {
+    const today = new Date(Date.now());
+   return today;
+  }
+
+  public displayDate() {
+    return this.todayDate();
+  }
+
 }
