@@ -1,0 +1,17 @@
+<p>suma works!</p>
+<p>
+    <button (click)="ustawTryb(0)">suma</button>
+    <button (click)="ustawTryb(1)">roznica</button>
+    <button (click)="ustawTryb(2)">iloczyn</button>
+    <button (click)="ustawTryb(3)">iloraz</button>
+</p>
+
+{{ks.tlumaczTryb(tryb)}} liczb {{liczba1}} i {{liczba2}} wynosi {{ks.operacja(liczba1, liczba2, tryb)}}
+<br>
+<!-- Suma2 wynosi {{suma2()}} -->
+
+{{tablica}}
+<button (click)="zmienTablice()">zmien</button>
+
+<button (click)="ustawTryb(-1)">reset</button>
+<app-reset (doWywolania)="reset($event)"></app-reset>
