@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SklepService } from './sklep.service';
+import { Produkt, SklepService } from './sklep.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,26 @@ import { SklepService } from './sklep.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public ladujeDane = true;
   public title = 'apka';
+  public pobraneProdukty: Produkt[];
+
+
   constructor(sklep: SklepService) {
-    sklep.pobierzProdukty();
+    this.pobraneProdukty = [];
+    console.log('przed');
+    let produkty = sklep.pobierzProdukty();
+    console.log('po');
+
+
+    produkty.subscribe( (tablicaProduktow) => {
+      this.ladujeDane = false;
+      this.pobraneProdukty = tablicaProduktow;
+      console.log('pobrano produkty');
+      console.log(tablicaProduktow);
+    }
+    
+    )
   }
 
   private todayDate() {
@@ -19,6 +36,11 @@ export class AppComponent {
 
   public displayDate() {
     return this.todayDate();
+  }
+
+
+  dodajDoKOszyka(id: String) {
+
   }
 
 }

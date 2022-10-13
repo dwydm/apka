@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class SklepService {
 
 
 
-  pobierzProdukty() {
+  pobierzProdukty(): Observable<Produkt[]> {
     console.log('początek pobierania produktów');
    
     return this.http.get<Produkt[]>("https://6348369b0484786c6e94e473.mockapi.io/produkty");
