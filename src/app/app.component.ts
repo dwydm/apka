@@ -12,10 +12,10 @@ export class AppComponent {
   public pobraneProdukty: Produkt[];
 
 
-  constructor(sklep: SklepService) {
+  constructor(private sklep: SklepService) {
     this.pobraneProdukty = [];
     console.log('przed');
-    let produkty = sklep.pobierzProdukty();
+    let produkty = this.sklep.pobierzProdukty();
     console.log('po');
 
 
@@ -40,6 +40,8 @@ export class AppComponent {
 
 
   dodajDoKOszyka(id: String) {
+    console.log(id);
+    this.sklep.doKOszyka(id);
 
   }
 
