@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SklepService } from './sklep.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'apka';
-
-  constructor() {
+  constructor(sklep: SklepService) {
+    sklep.pobierzProdukty();
   }
 
   private todayDate() {

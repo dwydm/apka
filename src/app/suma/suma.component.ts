@@ -1,10 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { KalkulatorService } from '../kalkulator.service';
+import { MultiserviceService } from '../multiservice.service';
 
 @Component({
   selector: 'app-suma',
   templateUrl: './suma.component.html',
-  styleUrls: ['./suma.component.scss']
+  styleUrls: ['./suma.component.scss'],
+  providers: [MultiserviceService]
 })
 export class SumaComponent implements OnInit {
 
