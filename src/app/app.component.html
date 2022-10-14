@@ -8,15 +8,16 @@
 <app-koszyk>
     
 </app-koszyk>
-
-<tr>
-    <th>id</th>
-    <th>nazwa</th>
-    <th>cena</th>
-    <th>kategoria</th>
-
-</tr>
     <table *ngIf="!ladujeDane">
+
+        <tr>
+            <th>id</th>
+            <th>nazwa</th>
+            <th>cena</th>
+            <th>kategoria</th>
+        
+        </tr>
+        
         <tr *ngFor="let produkt of pobraneProdukty">
             <td>{{produkt.id}}</td>
             <td>{{produkt.name}}</td>
