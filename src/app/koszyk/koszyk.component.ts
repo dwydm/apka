@@ -29,8 +29,6 @@ export class KoszykComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
-
-
   }
 
 }
