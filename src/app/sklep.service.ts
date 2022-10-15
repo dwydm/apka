@@ -12,11 +12,11 @@ export class SklepService {
   //http!: HttpClient;
   constructor(public http: HttpClient) { }
 
-  doKOszyka(id: String) {
-    this.koszyk.push(id);
+  doKOszyka(id: String, name: String) {
+    //this.koszyk.push(id, name);
     //this.shoppingCart.next(this.koszyk);
     let kosz = this.shoppingCart.value;
-    kosz.push(id);
+    kosz.push(id, name);
     this.shoppingCart.next(kosz);
     //this.shoppingCart.value;
     console.log(this.koszyk);

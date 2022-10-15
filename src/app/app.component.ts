@@ -39,9 +39,9 @@ export class AppComponent {
   }
 
 
-  dodajDoKOszyka(id: String) {
+  dodajDoKOszyka(id: String, name: String) {
     console.log(id);
-    this.sklep.doKOszyka(id);
+    this.sklep.doKOszyka(id, name);
 
   }
 
