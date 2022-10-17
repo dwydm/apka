@@ -1,7 +1,11 @@
+@function powieksz($baza, $wspolczynnik) {
+    @return $baza * $wspolczynnik;
+}
+
 h1 {
     color: rgb(216, 23, 113);
     background-color: rgb(105, 105, 105);
     width: 100%;
     margin: 0;
-    padding: 5px;
+    padding: powieksz(5px, 1.5);
 }
