@@ -21,13 +21,17 @@ export class KoszykComponent implements OnInit, OnDestroy {
   }
 
   stop(): void {
+    console.log('stop');
+    this.sub.unsubscribe();
 
   }
 
   ngOnInit(): void {
+    console.log('konstruktor componentu startuje');
   }
 
   ngOnDestroy(): void {
+    console.log('komponent kończy')
     this.sub.unsubscribe();
   }
 

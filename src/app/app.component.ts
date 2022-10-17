@@ -7,26 +7,10 @@ import { Produkt, SklepService } from './sklep.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public ladujeDane = true;
   public title = 'apka';
-  public pobraneProdukty: Produkt[];
 
 
-  constructor(private sklep: SklepService) {
-    this.pobraneProdukty = [];
-    console.log('przed');
-    let produkty = this.sklep.pobierzProdukty();
-    console.log('po');
-
-
-    produkty.subscribe( (tablicaProduktow) => {
-      this.ladujeDane = false;
-      this.pobraneProdukty = tablicaProduktow;
-      console.log('pobrano produkty');
-      console.log(tablicaProduktow);
-    }
-    
-    )
+  constructor() {
   }
 
   private todayDate() {
@@ -37,12 +21,4 @@ export class AppComponent {
   public displayDate() {
     return this.todayDate();
   }
-
-
-  dodajDoKOszyka(id: String, name: String) {
-    console.log(id);
-    this.sklep.doKOszyka(id, name);
-
-  }
-
 }

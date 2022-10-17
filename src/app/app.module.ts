@@ -9,6 +9,10 @@ import { ResetComponent } from './reset/reset.component';
 import { MultiserviceService } from './multiservice.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { KoszykComponent } from './koszyk/koszyk.component';
+import { FormularzComponent } from './formularz/formularz.component';
+import { NawigacjaComponent } from './nawigacja/nawigacja.component';
+import { ListaComponent } from './lista/lista.component';
+import { ZamowieniaComponent } from './zamowienia/zamowienia.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { KoszykComponent } from './koszyk/koszyk.component';
     NaglowekComponent,
     SumaComponent,
     ResetComponent,
-    KoszykComponent
+    KoszykComponent,
+    FormularzComponent,
+    NawigacjaComponent,
+    ListaComponent,
+    ZamowieniaComponent
   ],
   imports: [
     BrowserModule,
