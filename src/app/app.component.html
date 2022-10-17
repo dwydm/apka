@@ -2,37 +2,16 @@
 [nazwaFirmy]="'Umbrella Corp'" 
 [koszyk]="true">
 </app-naglowek>
+<app-nawigacja></app-nawigacja>
 
-<p *ngIf="ladujeDane">ładuję listę produktów...</p>
+<main>
 
-<app-koszyk>
-    
-</app-koszyk>
-    <table *ngIf="!ladujeDane">
 
-        <tr>
-            <th>id</th>
-            <th>nazwa</th>
-            <th>cena</th>
-            <th>kategoria</th>
-        
-        </tr>
-        
-        <tr *ngFor="let produkt of pobraneProdukty">
-            <td>{{produkt.id}}</td>
-            <td>{{produkt.name}}</td>
-            <td>{{produkt.cena}}</td>
-            <td>{{produkt.kategoria}}</td>
-            <td><button (click)="dodajDoKOszyka(produkt.id, produkt.name)">do koszyka</button></td>
+<!-- <h1>Hello World</h1> -->
+<!-- {{title}} templatte interpolation -->
 
-        </tr>
-
-    </table>
-
-<h1>Hello World</h1>
-{{title}} <!--templatte interpolation -->
-{{displayDate()}}
-
-<app-suma [liczba1]="325" [liczba2]="176"></app-suma>
+<!-- <app-suma [liczba1]="325" [liczba2]="176"></app-suma> -->
 
 <router-outlet></router-outlet>
+{{displayDate()}}
+</main>
