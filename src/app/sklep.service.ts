@@ -8,9 +8,12 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class SklepService {
   public shoppingCart: BehaviorSubject<String[]> = new BehaviorSubject([] as String[]);
   public koszyk: String[] = [];
+  public produkty: any;
 
   //http!: HttpClient;
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) { 
+
+  }
 
   doKOszyka(id: String, name: String) {
     //this.koszyk.push(id, name);
@@ -33,6 +36,6 @@ export class SklepService {
 export interface Produkt {
   id: String;
   name: String;
-  cena: String;
+  cena: string;
   kategoria: number;
 }

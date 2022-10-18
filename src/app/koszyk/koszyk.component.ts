@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { SklepService } from '../sklep.service';
+import { Produkt, SklepService } from '../sklep.service';
 
 @Component({
   selector: 'app-koszyk',
@@ -17,6 +17,10 @@ export class KoszykComponent implements OnInit, OnDestroy {
       this.zawartoscKoszyka = cart;
       console.log(`cart z komponentu shoppingCart: ${cart}`)
     })
+
+  //   this.sub2 = this.sklep.produkty.subscribe( (produkty: Produkt) => {
+  //     this.wszystkieProdukty = produkty;
+  // })
 
   }
 

@@ -17,7 +17,7 @@
         <tr *ngFor="let produkt of pobraneProdukty">
             <td>{{produkt.id}}</td>
             <td>{{produkt.name}}</td>
-            <td>{{produkt.cena}}</td>
+            <td>{{produkt.cena | currencyConverter: 'USD'}}</td>
             <td>{{produkt.kategoria}}</td>
             <td><button (click)="dodajDoKOszyka(produkt.id, produkt.name)">do koszyka</button></td>
 
