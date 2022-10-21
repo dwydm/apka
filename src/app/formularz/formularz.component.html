@@ -1,1 +1,28 @@
-<p>formularz works!</p>
+<!-- <p>formularz works! 123</p> -->
+<h1>formularz</h1>
+
+<form [formGroup]="form">
+    <input type="text" formControlName="imie">
+    <input type="text" formControlName="nazwisko">
+
+    <label for="M">mężczyzna</label>
+    <input type="radio" formControlName="plec" value="M" id="M">
+    <label for="K">kobieta</label>
+    <input type="radio" formControlName="plec" value="K" id="K">
+
+    <div *ngIf="form.controls.imie.errors">
+        <div *ngIf="form.controls.imie.errors['minlength']">Pole musi mieć minimum 3 znaki, obecnie: {{form.controls.imie.errors['minlength'].actualLength}}</div>
+        <div *ngIf="form.controls.imie.errors['maxlength']">Pole musi mieć maximum 3 znaki, obecnie: {{form.controls.imie.errors['maxlength'].actualLength}}</div>
+        <!-- <div *ngIf="form.controls.nazwisko.errors['nazwiskoreq']">Pole musi kończyć się na ski</div> -->
+    </div>
+    <button *ngIf="form.valid" (click)="przeslijDane()">Wyślij</button>
+
+<div>imię: {{form.controls.imie.value}}</div>
+<div>nazwisko: {{form.controls.nazwisko.value}}</div>
+
+</form>
+
+
+{{form.value | json}}
+
+<button (click)="wartosciDomyslne()">wstaw imie</button>
